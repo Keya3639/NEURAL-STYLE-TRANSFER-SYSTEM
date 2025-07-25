@@ -111,3 +111,4 @@ This system uses the VGG-19 architecture to extract content and style features f
 The Neural Style Transfer System successfully blends deep learning and artistic expression, transforming images by combining the content of one with the artistic style of another. Powered by PyTorch and VGG-19, the system demonstrates how AI can be creatively applied to generate unique visuals. With flexible architecture and potential for real-world use cases, this project lays a strong foundation for future AI-driven art tools.
 
 ## OUTPUT:
+![Image](https://github.com/user-attachments/assets/84102531-c6bf-472d-ba98-0a5535d803f8)
