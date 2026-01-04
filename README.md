@@ -1,18 +1,5 @@
 # NEURAL-STYLE-TRANSFER-SYSTEM
 
-*COMPANY* : CODTECH IT SOLUTIONS PVT.LTD
-
-*NAME* : KEYA KARUNAMOY DAS
-
-*INTERN ID* : CT12DN1213
-
-*DOMAIN* : ARTIFICIAL INTELLIGENCE 
-
-*DURATION* : 12 WEEKS 
-
-*MENTOR* : NEELA SANTHOSH KUMAR 
-
-##
 The **Neural Style Transfer System** is a Python-based deep learning project that artistically reimagines one image using the style of another. It blends the content of a photograph with the style of a painting using a pre-trained VGG-19 convolutional neural network. This technique is part of the field of computer vision and AI-generated art, showcasing how AI can support human creativity and visual aesthetics.
 
 ## Overview
