@@ -1,101 +1,295 @@
-# NEURAL-STYLE-TRANSFER-SYSTEM
+<div align="center">
+
+# 🎨 Neural Style Transfer
+
+# Deep Learning Powered Artistic Image Stylization
+
+## Blend Content. Apply Style. Create Art. 🖼️
+
+</div>
+
+---
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-Deep_Learning-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![VGG19](https://img.shields.io/badge/VGG19-Pre_Trained-FF6F00?style=for-the-badge)
+![PIL](https://img.shields.io/badge/PIL-Image_Processing-8B4513?style=for-the-badge)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=for-the-badge&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Computing-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![CPU/GPU](https://img.shields.io/badge/Compute-CPU_GPU_Ready-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
+</p>
+
+---
+
+# 📖 Project Description
 
 The **Neural Style Transfer System** is a Python-based deep learning project that artistically reimagines one image using the style of another. It blends the content of a photograph with the style of a painting using a pre-trained VGG-19 convolutional neural network. This technique is part of the field of computer vision and AI-generated art, showcasing how AI can support human creativity and visual aesthetics.
 
-## Overview
-This system uses the VGG-19 architecture to extract content and style features from two images. It calculates content loss and style loss and iteratively updates the input image using gradient descent to minimize the total loss. The result is an image that maintains the structure of the original photo while capturing the texture and patterns of the chosen style image. This project is valuable for artists, designers, educators, and researchers interested in the intersection of deep learning and creativity.
+---
 
-## Tools and Technologies Used
+# ✨ Key Highlights
 
-- **Python**: Core language used for development due to its simplicity and extensive AI support.
+- 🎨 Artistic Style Transfer Using VGG-19
+- 🖼️ Content + Style Feature Extraction
+- 📊 Content & Style Loss Calculation
+- 🔄 Iterative Gradient Descent Optimization
+- 📈 Visual Progress Monitoring
+- 💾 Saves Stylized Output Image
+- ⚙️ Adjustable Content & Style Weights
+- 🖥️ CPU & GPU Support
 
-- **PyTorch**: Deep learning framework used to define and train the neural network.
+---
 
-- **Torchvision**: Provides access to the pre-trained VGG-19 model and image transformation utilities.
+# 🏗 System Architecture
 
-- **PIL (Pillow)**: For loading, converting, and saving images.
+```mermaid
+flowchart TD
 
-- **Matplotlib**: For visualizing input, intermediate, and final images.
+A["🖼️ Content Image"]
+B["🎨 Style Image"]
 
-- **NumPy**: For efficient array operations, used internally by PyTorch.
+A --> C
+B --> C
 
-## Why These Tools Were Selected
+C["🧠 VGG-19 Feature Extraction"]
 
-- **VGG-19** offers deep feature maps ideal for extracting both style and content characteristics.
+C --> D["📊 Content Features"]
+C --> E["🎨 Style Features"]
 
-- **PyTorch** allows flexibility in defining custom layers and losses, and supports automatic differentiation.
+D --> F["📉 Content Loss"]
+E --> G["🎯 Style Loss"]
 
-- **Torchvision** makes it easy to import models and preprocessing pipelines.
+F --> H["📊 Total Loss"]
+G --> H
 
-- **PIL and Matplotlib** simplify image handling and display.
+H --> I["🔄 Gradient Descent"]
 
-- **Python** has a rich ecosystem of open-source libraries that accelerate deep learning development.
+I --> J["🖼️ Updated Image"]
 
-## Features
+J --> K["📈 Iteration Loop"]
 
-- **Applies artistic styles** from one image onto another using neural network-based optimization.
+K --> L["📸 Final Stylized Output"]
+```
 
-- **Uses pre-trained VGG-19** for feature extraction, no training required.
+---
 
-- **Supports any image** pair as content and style sources.
+### 🔄 How It Works
 
-- **Saves** the final output as stylized_output.jpg.
+1. Load content image and style image.
+2. Extract content features using VGG-19 layers.
+3. Extract style features using Gram matrices.
+4. Initialize target image as a copy of content image.
+5. Calculate content loss and style loss.
+6. Compute total loss (content_weight × content_loss + style_weight × style_loss).
+7. Perform gradient descent to update target image.
+8. Repeat for specified iterations.
+9. Display progress every 50 iterations.
+10. Save final stylized image.
 
-- **Visual output** displayed after every 50 iterations to monitor progress.
+---
 
-- **Content and style weights** can be manually adjusted for desired results.
+# ✨ Core Features
 
-## Advantages
+## 🧠 VGG-19 Feature Extraction
+- Pre-trained model (no training required)
+- Deep feature maps for content
+- Gram matrices for style
+- Multi-layer style extraction
 
-- **High-quality** stylization using a deep CNN.
+---
 
-- **No retraining** required, as it uses a pre-trained model.
+## 📊 Loss Functions
 
-- **Offline support** once model weights are cached.
+| Loss Type | Purpose |
+|:---|:---|
+| Content Loss | Preserves image structure |
+| Style Loss | Captures artistic style |
+| Total Loss | Combined optimization goal |
 
-- **Flexible configuration**, including resolution and loss weight customization.
+---
 
-- **Works** on CPU and GPU, making it accessible to more users.
+## 🔄 Iterative Optimization
+- Gradient descent optimization
+- Adjustable iterations
+- Progress visualization
+- Step-by-step refinement
 
-## Limitations
+---
 
-- **Single image pair** at a time; batch processing not supported.
+## ⚙️ Adjustable Parameters
 
-- **Not optimized** for video or animation inputs.
+| Parameter | Function |
+|:---|:---|
+| Content Weight | Structure preservation |
+| Style Weight | Style intensity |
+| Iterations | Quality vs speed trade-off |
+| Image Size | Resolution control |
 
-- **Longer processing** time on systems without GPU acceleration.
+---
 
-- **No built-in GUI**, requires basic coding knowledge.
+# 🛠 Technology Stack
 
-- **Static** resolution, resizing needed for different dimensions.
+| Layer | Technology |
+|:---|:---|
+| Programming Language | Python 3.11 |
+| Deep Learning | PyTorch |
+| Model | VGG-19 (Pre-trained) |
+| Image Processing | PIL (Pillow) |
+| Visualization | Matplotlib |
+| Computations | NumPy |
+| Deployment | Local / CLI |
+| Version Control | Git & GitHub |
 
-## Real-Time Applications
+---
 
-- **AI Art Creation**: Turn regular photos into styled artworks.
+# 📂 Project Structure
 
-- **Photo Filters**: Power for stylized photo-editing features in apps.
+```text
+NEURAL-STYLE-TRANSFER-SYSTEM/
+│
+├── style_transfer.py                   # Main Application
+├── requirements.txt                    # Dependencies
+├── README.md                           # Documentation
+├── .gitignore                          # Git Ignore
+│
+├── content.jpg                         # Content Image
+├── style.jpg                           # Style Image
+└── stylized_output.jpg                 # Final Output
+```
 
-- **Content Design**: Unique visuals for advertisements, blogs, or social media.
+---
 
-- **Educational Demonstrations**: Helps explain deep learning principles visually.
+# 📸 Application Preview
 
-- **Creative Tools**: Assists content creators with automated visual generation.
-
-## Future Enhancements
-
-- **Batch processing** support for handling multiple image pairs.
-
-- **Video** style transfer for animated or real-time media.
-
-- **Interactive GUI/Web** interface for non-coders.
-
-- **Multi-style** support allowing multiple styles in a single output.
-
-- **Mobile** and API deployment for broader accessibility.
-
-## Conclusion
-
-The Neural Style Transfer System successfully blends deep learning and artistic expression, transforming images by combining the content of one with the artistic style of another. Powered by PyTorch and VGG-19, the system demonstrates how AI can be creatively applied to generate unique visuals. With flexible architecture and potential for real-world use cases, this project lays a strong foundation for future AI-driven art tools.
-
-## OUTPUT:
 ![Image](https://github.com/user-attachments/assets/84102531-c6bf-472d-ba98-0a5535d803f8)
+
+---
+
+# ⚙ Installation
+
+## Prerequisites
+
+- Python 3.11+
+- pip
+
+---
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Keya3639/NEURAL-STYLE-TRANSFER-SYSTEM.git
+
+cd NEURAL-STYLE-TRANSFER-SYSTEM
+```
+
+---
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Run Application
+
+```bash
+python style_transfer.py
+```
+
+---
+
+# 🚀 Demo Workflow
+
+| Step | Action |
+|:--:|:---|
+| 1 | Load Content Image |
+| 2 | Load Style Image |
+| 3 | Set Content & Style Weights |
+| 4 | Run Style Transfer |
+| 5 | Monitor Progress Every 50 Iterations |
+| 6 | View Final Stylized Output |
+| 7 | Save Result as stylized_output.jpg |
+
+---
+
+# 📈 Advantages
+
+- ✅ High-quality stylization
+- ✅ No retraining required
+- ✅ Offline support
+- ✅ Flexible configuration
+- ✅ CPU and GPU support
+- ✅ Visually impressive results
+
+---
+
+# ⚠️ Limitations
+
+- Single image pair at a time
+- Not optimized for video/animation
+- Longer processing on CPU
+- No built-in GUI
+- Requires basic coding knowledge
+
+---
+
+# 🌟 Real-Time Applications
+
+- 🎨 AI Art Creation
+- 📸 Photo Filters
+- 🎯 Content Design
+- 🎓 Educational Demonstrations
+- 🎬 Creative Tools
+
+---
+
+# 🔮 Future Enhancements
+
+| Phase | Features |
+|:---|:---|
+| Phase 1 | Batch processing support |
+| Phase 2 | Video style transfer |
+| Phase 3 | Interactive GUI/Web interface |
+| Phase 4 | Multi-style support |
+| Phase 5 | Mobile and API deployment |
+
+---
+
+# 👩‍💻 Developer
+
+## Keya Das
+
+**MCA (Artificial Intelligence & Data Science)**
+
+🌐 **GitHub**
+
+https://github.com/Keya3639
+
+📧 **Email**
+
+keyakarunamoydas@gmail.com
+
+---
+
+<div align="center">
+
+# 🎨 Neural Style Transfer
+
+### Blend Content. Apply Style. Create Art. 🖼️
+
+<br>
+
+**Built with ❤️ using**
+
+**Python • PyTorch • VGG-19 • PIL • Matplotlib • NumPy**
+
+<br>
+
+</div>
+```
